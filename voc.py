@@ -13,7 +13,7 @@ def tokenize_sentence(sentence):
 #--------- Vocabulary class-----------
 
 
-class voc:
+class Voc:
     """A simple vocabulary class"""
 
     def __init__(self):
