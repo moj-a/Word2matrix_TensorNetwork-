@@ -14,7 +14,7 @@ def get_input_layer(word_idx,vocabulary_size):
 
 #------------------ word to matrix function ------------------------
 
-class word2matr:
+class Word2Matr:
   """This class dives the matrix embedding of words, 
      and also construct MPS for sentences based on a very simple tensor network structure.
   """
