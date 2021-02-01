@@ -21,9 +21,9 @@ from sklearn.preprocessing import StandardScaler
 
 # my own files:
 from grammar import C_F_G
-from voc import voc, tokenize_sentence
-from model import binaryClassification
-from utility import word2matr, get_input_layer, binary_acc
+from voc import Voc, tokenize_sentence
+from model import BinaryClassification
+from utility import Word2Matr, get_input_layer, binary_acc
 
 # ---------------Generation a list of 150 sentense about food
 
@@ -93,7 +93,7 @@ DF.to_csv(r'/Users/moj/Desktop/dataset_grammar.csv')
 
 # --------------Using voc class to find vocabulary list
 
-VOC=voc()
+VOC=Voc()
 vocabulary=VOC.voc_list(tokenize_sentence(arr_dataset[:,0])+tokenize_sentence(arr_dataset[:,1]))
 word2idx=VOC.word2idx(tokenize_sentence(arr_dataset[:,0])+tokenize_sentence(arr_dataset[:,1]))
 
@@ -159,7 +159,7 @@ for epo in range(num_epochs):
 # ----------------constructing the main dataset--------------
 
 
-fe=word2matr(embedding_dims, word2idx, W1)
+fe=Word2Matr(embedding_dims, word2idx, W1)
 
 # Finding the similarity between two sentences 
 X=[]
@@ -221,7 +221,7 @@ device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 print(device)
 
 # load data
-model = binaryClassification()
+model = BinaryClassification()
 model.to(device)
 print(model)
 
