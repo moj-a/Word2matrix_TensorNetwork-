@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 # Neural Net Architecture
 
-class binaryClassification(nn.Module):
+class BinaryClassification(nn.Module):
     def __init__(self):
         super(binaryClassification, self).__init__()
         # Number of input features is 1.
